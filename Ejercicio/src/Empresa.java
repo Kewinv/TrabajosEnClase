@@ -12,6 +12,8 @@ public class Empresa
        nomina();
        Consola.imprimir("\nEl salario promedio es: $" + salarioProm());
        Consola.imprimir("\nEl porcentaje de empleados que trabajaron mas de 40 horas es: " + porcEM40h() + "%");
+       
+       
     }
 
     public static void ingresarEmpleado()
@@ -39,7 +41,7 @@ public class Empresa
 
     public static void nomina()
     {
-        Consola.imprimir("NOMBRE DEL EMPLEADO\t\t\t\t\t SALARIO\n");
+        Consola.imprimir("NOMBRE DEL EMPLEADO\t\t\t\t\t\t SALARIO\n");
         for (int i = 0; i <n; i++)
         {
             Consola.imprimirLn(vecEmp[i].getNom() + "\t\t\t\t\t\t\t" + vecEmp[i].calcularSalario());
@@ -71,5 +73,35 @@ public class Empresa
         porc = (contadorEm40 / n * 100);
         return porc;
        
+    }
+
+    public static void empleadosConMayorSalario()
+    {
+        //Primer recorrido del vector: hallar el mayor salario
+        double mayor = -1;
+
+        for(int i = 0 ; i<n ; i= i+1)
+        {
+            if(vecEmp[i].calcularSalario() > mayor)
+            {
+                mayor = vecEmp[i].calcularSalario();
+            }
+        }
+
+        //Segundo recorrido: Mostrar los nombres
+        Consola.imprimir("El mayor es: $ " + mayor + " Y lo devengan los siguientes empleados");
+
+        int i =0;
+        while(i <n )
+        {
+            if(vecEmp[i].calcularSalario() == mayor)
+            {
+                Consola.imprimirLn(vecEmp[i].getNom());
+            }
+            i=i+1;
+        }
+
+
+        
     }
 }

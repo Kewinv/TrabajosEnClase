@@ -91,15 +91,19 @@ public class Consola
    }
    //--------------------------------------------------------------------------------------------------------
    //Metodos para imprimir datos
-   public static void imprimirLn (String texto)
+   public static void imprimirLn (Object texto)
    {
         //Salida con salto de línea
         System.out.println(texto);
    }
-   public static void imprimir (String texto)
+   public static void imprimir (Object texto)
    {
         //Salida sin salto de línea
         System.out.print(texto);
-   }   
+   }
+public static void imprimirLn(Object empleadosConMayorSalario) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'imprimirLn'");
+}   
 }
 
